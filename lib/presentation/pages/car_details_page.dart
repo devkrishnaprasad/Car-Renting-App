@@ -1,4 +1,5 @@
 import 'package:car_rent_app/data/models/cart.dart';
+import 'package:car_rent_app/presentation/pages/car_list_screen.dart';
 import 'package:car_rent_app/presentation/pages/map_details_page.dart';
 import 'package:car_rent_app/presentation/widget/car_card.dart';
 import 'package:car_rent_app/presentation/widget/more_card.dart';
@@ -39,9 +40,21 @@ class _CarDetailsPageState extends State<CarDetailsPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios_new),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CarListScreen()),
+            );
+          },
+        ),
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [Icon(Icons.info_outline), Text(' Information')],
+          children: [
+            Icon(Icons.info_outline),
+            Text(' Information'),
+          ],
         ),
       ),
       body: Column(

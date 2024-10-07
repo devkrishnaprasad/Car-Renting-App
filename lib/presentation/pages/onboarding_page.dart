@@ -49,7 +49,7 @@ class OnboardingPage extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).pushAndRemoveUntil(
                               MaterialPageRoute(
-                                  builder: (context) => CarListScreen()),
+                                  builder: (context) => const CarListScreen()),
                               (route) => false);
                         },
                         style: ElevatedButton.styleFrom(

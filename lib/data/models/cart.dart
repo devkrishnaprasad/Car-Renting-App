@@ -12,9 +12,16 @@ class Car {
 
   factory Car.fromMap(Map<String, dynamic> map) {
     return Car(
-        model: map['model'],
-        distance: map['distance'],
-        fuelCapacity: map['fuelCapacity'],
-        pricePerHour: map['pricePerHour']);
+      model: map['model'],
+      distance: (map['distance'] is int)
+          ? (map['distance'] as int).toDouble()
+          : map['distance'],
+      fuelCapacity: (map['fuelCapacity'] is int)
+          ? (map['fuelCapacity'] as int).toDouble()
+          : map['fuelCapacity'],
+      pricePerHour: (map['pricePerHour'] is int)
+          ? (map['pricePerHour'] as int).toDouble()
+          : map['pricePerHour'],
+    );
   }
 }
